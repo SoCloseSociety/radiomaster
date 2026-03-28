@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0a0a0a;
+  --color-foreground: #ededed;
+  --color-surface: #141414;
+  --color-surface-hover: #1a1a1a;
+  --color-border: #2a2a2a;
+  --color-accent: #00d4ff;
+  --color-accent-dim: #00a3c7;
+  --color-success: #00ff88;
+  --color-warning: #ffaa00;
+  --color-danger: #ff4444;
+  --color-drone: #ff6b35;
+  --color-radio: #00d4ff;
+  --color-goggles: #a855f7;
+  --color-receiver: #00ff88;
+  --color-vtx: #ffaa00;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: "SF Mono", "Fira Code", "Cascadia Code", monospace;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes scan-line {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.device-card {
+  transition: all 0.3s ease;
+  border: 1px solid var(--color-border);
+}
+
+.device-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
+}
